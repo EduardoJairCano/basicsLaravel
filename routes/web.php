@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   //return view('welcome');
+    echo "<a href='" . route('contactos') . "'>Contactos 1</a><br>";
+    echo "<a href='" . route('contactos') . "'>Contactos 2</a><br>";
+    echo "<a href='" . route('contactos') . "'>Contactos 3</a><br>";
 });
 
 // Ruta basica
@@ -29,3 +32,8 @@ Route::get('saludos/{nombre}', function($nombre) {
 Route::get('despedida/{nombre?}', function($nombre = "usuario") {
     return "Hasta luego " . $nombre;
 });
+
+// Names route
+Route::get('listaContactos', function () {
+    return "Seccion de contactos";
+})->name('contactos');
