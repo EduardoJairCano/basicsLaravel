@@ -1,9 +1,8 @@
-<html>
-<head>
-    <title> Basics Laravel Info </title>
-</head>
-<body>
+@extends('layout')
+
+@section('title', 'Basics Laravel Info')
+
+@section('content')
     <h1> Informacion </h1>
-    Este es el cuerso de <?php echo $proyecto ?>
-</body>
-</html>
+    <p> Este es el cuerso de {{ $proyecto }} </p>
+@endsection
