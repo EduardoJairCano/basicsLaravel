@@ -58,8 +58,11 @@ Route::get('info', function(){
 });
 
 // Route regresando una View con parametros con metodo ->with()
-Route::get('home', function(){
+/*Route::get('home', function(){
     $nombre = 'Jair';
 
     return view('home')->with('nombre', $nombre);
-});
+});*/
+
+// Route con metodo view y parámetros
+Route::view('home', 'home', ['nombre' => 'Jair']);
