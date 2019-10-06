@@ -37,3 +37,29 @@ Route::get('despedida/{nombre?}', function($nombre = "usuario") {
 Route::get('listaContactos', function () {
     return "Seccion de contactos";
 })->name('contactos');
+
+// Route regresando una View
+Route::get('laravel', function(){
+    return view('welcome');
+});
+
+// Route regresando una View con parametros por la función view()
+Route::get('info', function(){
+    $proyecto = 'Basics Laravel';
+
+    return view('info', ['proyecto' => $proyecto]);
+});
+
+// Route regresando una View con parametros por la función view() y compact()
+Route::get('info', function(){
+    $proyecto = 'Basics Laravel';
+
+    return view('info', compact('proyecto'));
+});
+
+// Route regresando una View con parametros con metodo ->with()
+Route::get('home', function(){
+    $nombre = 'Jair';
+
+    return view('home')->with('nombre', $nombre);
+});
