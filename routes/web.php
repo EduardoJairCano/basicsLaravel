@@ -41,21 +41,21 @@ Route::get('listaContactos', function () {
 // Route regresando una View
 Route::get('laravel', function(){
     return view('welcome');
-});
+})->name('laravel');
 
 // Route regresando una View con parametros por la función view()
-Route::get('info', function(){
+/*Route::get('info', function(){
     $proyecto = 'Basics Laravel';
 
     return view('info', ['proyecto' => $proyecto]);
-});
+});*/
 
 // Route regresando una View con parametros por la función view() y compact()
 Route::get('info', function(){
     $proyecto = 'Basics Laravel';
 
     return view('info', compact('proyecto'));
-});
+})->name('info');
 
 // Route regresando una View con parametros con metodo ->with()
 /*Route::get('home', function(){
@@ -65,4 +65,4 @@ Route::get('info', function(){
 });*/
 
 // Route con metodo view y parámetros
-Route::view('home', 'home', ['nombre' => 'Jair']);
+Route::view('home', 'home', ['nombre' => 'Jair'])->name('home');
