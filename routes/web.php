@@ -11,8 +11,14 @@
 |
 */
 
+$informacion = [
+    'curso' => 'Basics Laravel',
+    'modalidad' => 'Internet',
+    'precio' => 'Gratuito'
+];
+
 Route::view('home', 'home', ['nombre' => 'Jair'])->name('home');
 
-Route::view('info', 'info', ['proyecto' => 'Basics Laravel'])->name('info');
+Route::view('info', 'info', compact('informacion'))->name('info');
 
 Route::view('laravel', 'welcome')->name('laravel');

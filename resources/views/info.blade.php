@@ -4,5 +4,13 @@
 
 @section('content')
     <h1> Informacion </h1>
-    <p> Este es el cuerso de {{ $proyecto }} </p>
+    <ul>
+        @isset($informacion)
+            @foreach( $informacion as $item)
+                <li> {{ $item }} </li> <br>
+            @endforeach
+        @else
+            <li> No hay elementos </li>
+        @endisset
+    </ul>
 @endsection
